@@ -2,14 +2,17 @@ import React, {useEffect, useState} from "react";
 import PropTypes from 'prop-types';
 import HeaderCart from "./HeaderCart";
 import {Navigate, useLocation} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {searchReducer_set, searchReducer_set_param} from "../../store/searchReducer";
 
 // Логотип сайта
 export default function HeaderSearch(props) {
 
 //    console.log('window.location.pathname', window.location.pathname);
 
+    const dispatch = useDispatch();
+
     const location = useLocation();
-//    console.log('HeaderSearch location.pathname', location.pathname);
 
     const [is_search_show, setSearchShow] = useState(props.is_search_show);
     const [search_text, setSearchText] = useState('');
@@ -19,15 +22,11 @@ export default function HeaderSearch(props) {
         setSearchShow(prev => {
             // Если поле было скрыто, то отображаем его
             if (prev === false)
-            {
                 return true;
-            }
 
             // Если поле было открыто и поле с текстом пустое, то скрываем его
             if ((prev === true) && (search_text === ''))
-            {
                 return false;
-            }
 
             // Если поле было открыто и поле с текстом заполнено, то выполняем переадресацию,
             // т.е. поле не закрываем
@@ -36,6 +35,12 @@ export default function HeaderSearch(props) {
 
         if (search_text !== '')
         {
+            // Сохраняем введённый текст
+            dispatch(
+                searchReducer_set(
+                    searchReducer_set_param(search_text)
+                ));
+
             setRedirect(true);
         }
         else
@@ -44,6 +49,25 @@ export default function HeaderSearch(props) {
 
     const onTextChange = (evt) => {
         setSearchText(evt.target.value);
+    }
+
+    const onKeyDown = (evt)=> {
+
+        if (evt.keyCode === 13) {
+            evt.preventDefault();
+            console.log('press enter')
+
+            if (search_text !== '')
+            {
+                // Сохраняем введённый текст
+                dispatch(
+                    searchReducer_set(
+                        searchReducer_set_param(search_text)
+                    ));
+
+                setRedirect(true);
+            }
+        }
     }
 
     // Устанавливаем фокус на поле поиска
@@ -79,7 +103,7 @@ export default function HeaderSearch(props) {
         <>
             <form id="search-form" data-id="search-form"
                   className={'header-controls-search-form form-inline' + (is_search_show ? '' : ' invisible') }>
-                <input className="form-control" placeholder="Поиск" value={search_text} onChange={onTextChange} />
+                <input className="form-control" placeholder="Поиск" value={search_text} onChange={onTextChange} onKeyDown={onKeyDown} />
             </form>
             <div id="header-button">
                 <div className="header-controls-pics">

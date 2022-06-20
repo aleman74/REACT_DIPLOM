@@ -1,12 +1,16 @@
 import React, {useEffect, useState} from "react";
 import {Link, Navigate, useLocation} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {cartSelector} from "../../store/cartReducer";
 
 
 // Логотип сайта
 export default function HeaderCart(props) {
 
     const location = useLocation();
-    console.log('HeaderCart location.pathname', location.pathname);
+    const {items: cart_items} = useSelector(cartSelector);
+
+//    console.log('HeaderCart location.pathname', location.pathname);         // location.pathname = '/'
 
     const [is_redirect, setRedirect] = useState(false);
 
@@ -35,8 +39,13 @@ export default function HeaderCart(props) {
 
     return (
             <div className="header-controls-pic header-controls-cart" onClick={onClickCart}>
-                <div className="header-controls-cart-full">10</div>
-                <div className="header-controls-cart-menu" />
+                {
+                    (cart_items.length > 0) &&
+                        <>
+                            <div className="header-controls-cart-full">{(cart_items.length > 0) && cart_items.length}</div>
+                            <div className="header-controls-cart-menu" />
+                        </>
+                }
             </div>
     );
 }

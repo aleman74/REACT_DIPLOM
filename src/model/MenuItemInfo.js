@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class MenuItemInfo
 {
-    constructor(title,url)
+    constructor(title, url)
     {
         this.title = title;
         this.url = url;
