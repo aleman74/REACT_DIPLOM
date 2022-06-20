@@ -1,7 +1,5 @@
-import React from "react";
 import PropTypes from 'prop-types';
 import {nanoid} from "nanoid";
-
 import MenuItemInfo from "../../model/MenuItemInfo";
 import FooterInfoItem from "./FooterInfoItem";
 

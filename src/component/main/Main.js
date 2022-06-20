@@ -1,4 +1,3 @@
-import React from "react";
 import Hit from "./hit/Hit";
 import Catalog from "./catalog/Catalog";
 

@@ -1,9 +1,6 @@
-import React from "react";
-
 import HeaderLogo from "./HeaderLogo";
 import HeaderMenu from "./HeaderMenu";
 import HeaderSearch from "./HeaderSearch";
-
 import {LOGO, HEADER_MENU_ITEMS, IS_SEARCH_SHOW} from "../../data/global";
 
 

@@ -1,6 +1,3 @@
-import React from "react";
-
-
 // Каталог
 export default function About() {
 

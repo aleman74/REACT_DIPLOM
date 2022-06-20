@@ -1,9 +1,6 @@
-import React from "react";
 import FooterInfo from "./FooterInfo";
-import MenuItemInfo from "../../model/MenuItemInfo";
 import FooterPay from "./FooterPay";
 import FooterContact from "./FooterContact";
-
 import {FOOTER_MENU_ITEMS} from "../../data/global";
 
 

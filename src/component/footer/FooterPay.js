@@ -1,5 +1,3 @@
-import React from "react";
-
 // Колонка Принимаем к оплате
 export default function FooterPay() {
 

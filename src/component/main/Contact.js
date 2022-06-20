@@ -1,4 +1,3 @@
-import React from "react";
 import {CONTACT_INFO} from "../../data/global";
 
 // Каталог

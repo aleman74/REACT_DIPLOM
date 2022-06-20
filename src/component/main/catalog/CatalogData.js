@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-
 import {FormatPrice, ITEM_COUNT, TIME_DELAY} from "../../../data/global";
 import CatalogNext from "./CatalogNext";
 import {catalogReducer_start, catalogReducer_start_param, catalogSelector} from "../../../store/catalogReducer";

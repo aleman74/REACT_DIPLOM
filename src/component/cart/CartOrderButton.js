@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from "prop-types";
 import {useSelector, useDispatch} from "react-redux";
 import {cartReducer_order_start, cartReducer_order_start_param, cartSelector} from "../../store/cartReducer";

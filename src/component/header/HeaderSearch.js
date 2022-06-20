@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import PropTypes from 'prop-types';
 import HeaderCart from "./HeaderCart";
 import {Navigate, useLocation} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {searchReducer_set, searchReducer_set_param} from "../../store/searchReducer";
+
 
 // Логотип сайта
 export default function HeaderSearch(props) {

@@ -1,6 +1,4 @@
-import React from 'react';
 import {useSelector} from "react-redux";
-
 import {cartSelector} from "../../store/cartReducer";
 import {FormatPrice} from "../../data/global";
 import CartInfoItem from "./CartInfoItem";

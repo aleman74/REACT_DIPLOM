@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {useSelector} from "react-redux";
-
 import CatalogCategory from "./CatalogCategory";
 import {useLocation} from "react-router-dom";
 import CatalogSearch from "./CatalogSearch";

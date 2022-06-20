@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import {useEffect, useState} from "react";
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-
 import {categoryReducer_start, categoryReducer_start_param, categorySelector} from "../../../store/categoryReducer";
 
 

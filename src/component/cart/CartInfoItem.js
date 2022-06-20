@@ -1,6 +1,4 @@
-import React from 'react';
 import {useDispatch} from "react-redux";
-
 import {FormatPrice} from "../../data/global";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";

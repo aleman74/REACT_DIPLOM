@@ -1,8 +1,7 @@
-import React, {useState, useEffect, useRef} from 'react';
-import {Navigate, useParams} from "react-router-dom";
+import {useEffect} from 'react';
+import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {productReducer_start, productReducer_start_param, productSelector} from "../../../store/productReducer";
-import {hitReducer_start, hitReducer_start_param} from "../../../store/hitReducer";
 import Preloader from "../../preloader/Preloader";
 import ProductCart from "./ProductCart";
 import Message from "../../message/Message";
