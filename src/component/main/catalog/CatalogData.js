@@ -7,6 +7,7 @@ import {FormatPrice, ITEM_COUNT, TIME_DELAY} from "../../../data/global";
 import CatalogNext from "./CatalogNext";
 import {catalogReducer_start, catalogReducer_start_param, catalogSelector} from "../../../store/catalogReducer";
 import Preloader from "../../preloader/Preloader";
+import Message from "../../message/Message";
 
 
 // Каталог
@@ -124,28 +125,18 @@ export default function CatalogData(props) {
         if (result !== '')
             result = '?' + result;
 
-//        console.log('CatalogData getParam = ' + result);
         return result;
     }
 
 
-    // Если ошибка при загрузке данных, то не отображаем секцию
+    let msg = [];
+    let msg_type = '';
+
     if (data.error)
     {
-        console.log('CatalogData Ошибка при загрузке каталога: ' + data.error);
-        return null;
+        msg = ['Возникла ошика: ' + data.error, 'Попробуйте повторить операцию позднее.'];
+        msg_type = 'error';
     }
-
-    // Если в процессе загрузки данные (показываем индикатор)
-    if (data.loading)
-        return (
-            <Preloader />
-        );
-
-
-    // Если данных нет, то не отображаем секцию
-    if (data.items.length === 0)
-        return null;
 
 
     // Отображаем полученные данные
@@ -170,8 +161,13 @@ export default function CatalogData(props) {
                 }
             </div>
 
+            <Message msg={msg} msg_type={msg_type} />
             {
-                (data.items.length >= ITEM_COUNT) && (<CatalogNext onNext={onNext} />)
+                (data.loading) && <Preloader />
+            }
+
+            {
+                ((data.items.length >= ITEM_COUNT) && (!data.loading)) && (<CatalogNext onNext={onNext} />)
             }
         </>
     );

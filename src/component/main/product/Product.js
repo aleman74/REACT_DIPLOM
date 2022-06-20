@@ -5,6 +5,7 @@ import {productReducer_start, productReducer_start_param, productSelector} from 
 import {hitReducer_start, hitReducer_start_param} from "../../../store/hitReducer";
 import Preloader from "../../preloader/Preloader";
 import ProductCart from "./ProductCart";
+import Message from "../../message/Message";
 
 // Каталог
 export default function Product(props) {
@@ -31,8 +32,12 @@ export default function Product(props) {
     // Если ошибка при загрузке данных, то не отображаем секцию
     if (error)
     {
-        console.log('Ошибка при загрузке продукта: ' + error);
-        return null;
+        let msg = ['Возникла ошика: ' + error, 'Попробуйте повторить операцию позднее.'];
+        let msg_type = 'error';
+
+        return (
+            <Message msg={msg} msg_type={msg_type} />
+        );
     }
 
     // Если в процессе загрузки данные (показываем индикатор)
