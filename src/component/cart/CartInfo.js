@@ -22,18 +22,15 @@ export default function CartInfo() {
     let msg = [];
     let msg_type = '';
 
-    if (order_loading)
-    {
+    if (order_loading) {
         msg = ['Идёт оформление заказа!', 'Подождите пожалуйста.'];
         msg_type = 'normal';
     }
-    else if (order_complete)
-    {
+    else if (order_complete) {
         msg = ['Заказ успешно оформлен!', 'Приятных покупок на сайте.'];
         msg_type = 'ok';
     }
-    else if (order_error)
-    {
+    else if (order_error) {
         msg = ['Возникла ошика: ' + order_error, 'Попробуйте повторить операцию позднее.'];
         msg_type = 'error';
     }

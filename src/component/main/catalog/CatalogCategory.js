@@ -11,7 +11,6 @@ export default function CatalogCategory(props) {
     const {categories, loading, error} = useSelector(categorySelector);
     const dispatch = useDispatch();
 
-//    const [data, setData] = useState(new LoadInfo());
     const [category_id, setCategoryID] = useState(props.сategory_id);
 
     const style_active = {
@@ -31,8 +30,7 @@ export default function CatalogCategory(props) {
     useEffect(() => {
 
         // Запускаем загрузку данных (только при первом обращении)
-        if (categories.length === 0)
-        {
+        if (categories.length === 0) {
             dispatch(
                 categoryReducer_start(
                     categoryReducer_start_param(process.env.REACT_APP_URL_CATEGORIES)

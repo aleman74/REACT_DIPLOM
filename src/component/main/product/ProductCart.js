@@ -16,8 +16,7 @@ export default function ProductCart(props) {
     // Оставляем только доступные размеры
     for (let i = 0; i < props.item.sizes.length; i++)
     {
-        if (props.item.sizes[i].avalible)
-        {
+        if (props.item.sizes[i].avalible) {
             let v = {id: nanoid(), size: props.item.sizes[i].size};
             sizes.push(v);
         }

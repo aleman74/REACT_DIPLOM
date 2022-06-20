@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
-
 import {FormatPrice} from "../../../data/global";
 
 
 // Корзина
 export default function HitItem(props) {
-
-//    console.log('HitItem props.item', props.item);
 
     return (
             <div className="col-4">

@@ -71,8 +71,7 @@ export default function CatalogData(props) {
 
         let is_ok = true;
 
-        if (is_check_search_text)
-        {
+        if (is_check_search_text) {
             // Проверяем текущее значение фильтра
             let cur_search_text = '';
             let html_input = document.getElementById('catalog_search');
@@ -84,8 +83,7 @@ export default function CatalogData(props) {
 
 
         // Если параметры поиска не изменились, то выполняем загрузку
-        if (is_ok)
-        {
+        if (is_ok) {
             dispatch(
                 catalogReducer_start(
                     catalogReducer_start_param(process.env.REACT_APP_URL_ITEMS, getParam(), offset_data.is_add)

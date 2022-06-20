@@ -75,8 +75,7 @@ export function GetLocalStorage_user()
     let result = {phone: '', address: ''};
 
     // Проверяем существование ключа в localStorage
-    if (IsLocalStorageKeyExist(CURRENT_USER))
-    {
+    if (IsLocalStorageKeyExist(CURRENT_USER)) {
         let str = localStorage.getItem(CURRENT_USER);
         result = JSON.parse(str);
     }

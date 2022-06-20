@@ -9,7 +9,6 @@ export default function CartOrder() {
     // Получение данные о пользователе из localStorage
     const {phone: old_phone, address: old_address} = GetLocalStorage_user();
 
-
     const [is_agree, setAgree] = useState(false);
     const [phone, setPhone] = useState(old_phone);
     const [address, setAddress] = useState(old_address);

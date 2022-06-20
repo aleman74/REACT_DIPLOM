@@ -1,6 +1,5 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-
 import HitItem from "./HitItem";
 import {hitReducer_start, hitReducer_start_param, hitSelector} from "../../../store/hitReducer";
 import Preloader from "../../preloader/Preloader";
@@ -30,8 +29,7 @@ export default function Hit() {
 
 
     // Если ошибка при загрузке данных, то не отображаем секцию
-    if (error)
-    {
+    if (error) {
         console.log('Ошибка при загрузке хитов: ' + error);
         return null;
     }
@@ -47,9 +45,7 @@ export default function Hit() {
 
     // Если данных нет, то не отображаем секцию
     if (hits.length === 0)
-    {
         return null;
-    }
 
 
     // Отображаем полученные хиты

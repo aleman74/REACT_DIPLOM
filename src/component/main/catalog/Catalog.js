@@ -11,7 +11,6 @@ import {searchSelector} from "../../../store/searchReducer";
 export default function Catalog() {
 
     const location = useLocation();
-
     const {search_text} = useSelector(searchSelector);
     const [category_id, setCategory] = useState(0);
 

@@ -12,7 +12,6 @@ export default function HeaderSearch(props) {
 //    console.log('window.location.pathname', window.location.pathname);
 
     const dispatch = useDispatch();
-
     const location = useLocation();
 
     const [is_search_show, setSearchShow] = useState(props.is_search_show);
@@ -58,8 +57,7 @@ export default function HeaderSearch(props) {
             evt.preventDefault();
             console.log('press enter')
 
-            if (search_text !== '')
-            {
+            if (search_text !== '') {
                 // Сохраняем введённый текст
                 dispatch(
                     searchReducer_set(
@@ -87,8 +85,7 @@ export default function HeaderSearch(props) {
     useEffect(
         () => {
 
-            if (is_redirect && (location.pathname === '/catalog'))
-            {
+            if (is_redirect && (location.pathname === '/catalog')) {
                 setRedirect(false);
             }
         }, [is_redirect, location.pathname]

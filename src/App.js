@@ -19,8 +19,8 @@ import Product from "./component/main/product/Product";
 import Cart from "./component/cart/Cart";
 import Page404 from "./component/main/Page404";
 
-
 // import banner from "./img/banner.jpg";
+
 
 function App() {
 

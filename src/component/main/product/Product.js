@@ -29,8 +29,7 @@ export default function Product(props) {
 
 
     // Если ошибка при загрузке данных, то не отображаем секцию
-    if (error)
-    {
+    if (error) {
         let msg = ['Возникла ошика: ' + error, 'Попробуйте повторить операцию позднее.'];
         let msg_type = 'error';
 
@@ -47,9 +46,8 @@ export default function Product(props) {
 
     // Если данных нет, то не отображаем секцию
     if (!item)
-    {
         return null;
-    }
+
 
     // Отображаем полученные данные
     return (
