@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 // Header сайта
 export default function Message(props) {
 
+    let id = 0;
+
     if (props.msg.length > 0)
         return (
             <div className={
@@ -14,7 +16,7 @@ export default function Message(props) {
             }>
                 {
                     props.msg.map(str =>
-                        <>{str}<br/></>
+                        <React.Fragment key={id++}>{str}<br/></React.Fragment>
                     )
                 }
             </div>

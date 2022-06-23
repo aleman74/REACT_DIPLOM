@@ -351,3 +351,67 @@ h2, .h2 {
 .msg-error {
   color: red;
 }
+
+.card {
+  height: 440px;
+  max-width: 200%;
+}
+
+.card-img-top {
+  align-self: center;
+
+  max-height: 260px;
+  max-width: 300px;
+}
+
+#banner {
+  width: 100%;
+}
+
+.card-body {
+/*  width: 500px; */
+}
+
+.card2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
+
+  width: 500px;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.order .text-center {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.simple-link:hover {
+  text-decoration: underline;
+}
+
+#table-cart td {
+  vertical-align: middle;
+}
+
+label, #agreement {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#agreement {
+  margin-top: 1.2rem;
+}

@@ -19,7 +19,7 @@ const catalogReducer = createSlice({
 
         catalogReducer_start(state, action)
         {
-            state = {...state, loading: true, error: null, is_add: action.payload.is_add}
+            state = {...state, items: [], loading: true, error: null, is_add: action.payload.is_add}
 
             return state;
         },

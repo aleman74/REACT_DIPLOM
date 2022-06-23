@@ -44,7 +44,7 @@ export default function CartInfo() {
                     (order_loading) && <Preloader />
                 }
 
-                <table className="table table-bordered">
+                <table id="table-cart" className="table table-bordered">
                     <thead>
                     <tr>
                         <th scope="col">#</th>

@@ -28,7 +28,7 @@ export default function CartInfoItem(props) {
             <tr>
                 <td scope="row">{props.num}</td>
                 <td>
-                    <Link to={'/catalog/' + props.item.id}>{props.item.title}</Link>
+                    <Link to={'/catalog/' + props.item.id} className="nav-link simple-link">{props.item.title}</Link>
                 </td>
                 <td>{props.item.size}</td>
                 <td>{props.item.count}</td>

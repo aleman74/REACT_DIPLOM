@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import {useSelector, useDispatch} from "react-redux";
 import {cartReducer_order_start, cartReducer_order_start_param, cartSelector} from "../../store/cartReducer";
 import {GetOrderObject, SetLocalStorage_user} from "../../data/global";
+import {Navigate} from "react-router-dom";
 
 
 // Заказ

@@ -29,7 +29,7 @@ export default function CartOrder() {
     return (
             <section className="order">
                 <h2 className="text-center">Оформить заказ</h2>
-                <div className="card">
+                <div className="card2">
                     <form className="card-body">
                         <div className="form-group">
                             <label htmlFor="phone">Телефон</label>

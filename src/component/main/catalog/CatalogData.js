@@ -141,7 +141,7 @@ export default function CatalogData(props) {
         <>
             <div className="row">
                 {
-                    data.all_items.map(item =>
+                    data.items.map(item =>
 
                         <div key={item.id} className="col-4">
                             <div className="card catalog-item-card">

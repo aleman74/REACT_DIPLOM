@@ -8,7 +8,7 @@ export default function HeaderMenuItem(props) {
 
     return (
         <li className="nav-item active">
-            <NavLink className="nav-link" strict to={props.item.url}>{props.item.title}</NavLink>
+            <NavLink className="nav-link" to={props.item.url} strict="true">{props.item.title}</NavLink>
         </li>
     );
 }

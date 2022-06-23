@@ -49,7 +49,6 @@ export default function CatalogCategory(props) {
                 <Link
                     className={(category_id === 0) ? 'nav-link active' : 'nav-link'}
                     style={(category_id === 0) ? style_active : null}
-                    strict
                     to="/"
                     onClick={(evt) => onClickCategory(evt, 0)}
                 >
@@ -62,7 +61,6 @@ export default function CatalogCategory(props) {
                         <Link
                             className={(category_id === item.id) ? 'nav-link active' : 'nav-link'}
                             style={(category_id === item.id) ? style_active : null}
-                            strict
                             to="/"
                             onClick={(evt) => onClickCategory(evt, item.id)}
                         >

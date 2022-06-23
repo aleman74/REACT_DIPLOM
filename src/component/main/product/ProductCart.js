@@ -4,12 +4,14 @@ import {nanoid} from "nanoid";
 import {CartItem_new} from "../../../data/global";
 import {useDispatch} from "react-redux";
 import {cartReducer_add, cartReducer_add_param} from "../../../store/cartReducer";
+import {Navigate} from "react-router-dom";
 
 
 // Добавить в корзину продукт
 export default function ProductCart(props) {
 
     const dispatch = useDispatch();
+    const [is_redirect, setRedirect] = useState(false);    // Флаг перехода в корзину
 
     const sizes = [];
 
@@ -57,8 +59,16 @@ export default function ProductCart(props) {
             cartReducer_add(
                 cartReducer_add_param(cart_item)
             ));
+
+        // Устанавливаем флаг перехода в корзину
+        setRedirect(true);
     }
 
+
+    if (is_redirect)
+        return (
+            <Navigate to='/cart' />
+        );
 
     // Отображаем полученные данные
     return (
